@@ -1,7 +1,15 @@
-﻿<!DOCTYPE html>
+﻿@using WebMatrix.Data;
+@{
+    var db = Database.Open("WebPagesMovies");
+    var selectedData = db.Query("SELECT * FROM Movies");
+    var grid = new WebGrid(source: selectedData);
+}
+
+<!DOCTYPE html>
 <html>
 <head>
-    <title>Hello World</title>
+    <title>I'm going access a database</title>
+    <p>Hello World, I think the Database is now working</p>
 </head>
 <body>
 
